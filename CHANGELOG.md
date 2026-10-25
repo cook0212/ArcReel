@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.35.0](https://github.com/ArcReel/ArcReel/compare/v0.34.0...v0.35.0) (2026-10-25)
+
+
+### ✨ 新功能
+
+* **agent:** Agent 删除文件只进项目回收站，可列出与恢复删除记录，不能直写媒体与版本历史 ([7aae22b](https://github.com/ArcReel/ArcReel/commit/7aae22b9e442c33e8d105a231bbb3c67c4e82223)), closes [#3390](https://github.com/ArcReel/ArcReel/issues/3390)
+* **assets:** 删除资产、衍生与合并移入项目回收站，恢复时原名被占用则加后缀并走改名级联 ([3d31a84](https://github.com/ArcReel/ArcReel/commit/3d31a849192676dac43acc89d57d3ec7e084edde)), closes [#3385](https://github.com/ArcReel/ArcReel/issues/3385)
+* **episodes:** 删除的集进入项目回收站，恢复为自带原文的集排在播出顺序末尾 ([df3664e](https://github.com/ArcReel/ArcReel/commit/df3664e8e116785cdef36f0fe4e3679034e37970)), closes [#3384](https://github.com/ArcReel/ArcReel/issues/3384)
+* **files:** 文件视图可以把未引用文件移入项目回收站，并在回收站分区恢复、彻底删除或清空 ([fc6f422](https://github.com/ArcReel/ArcReel/commit/fc6f42267ad20f8d1383c9402323c76d34d5cbd2)), closes [#3380](https://github.com/ArcReel/ArcReel/issues/3380)
+* **files:** 新增只读的项目文件视图，按引用关系标出每个文件的角色 ([89e4a0d](https://github.com/ArcReel/ArcReel/commit/89e4a0d787af4602ff277b13eef70bfcbe08ea50)), closes [#3379](https://github.com/ArcReel/ArcReel/issues/3379)
+* **generation:** 生成完成时目标已删除的结果进入项目回收站，不再写回或复活被删内容 ([0feaeca](https://github.com/ArcReel/ArcReel/commit/0feaecaaee8ae7a63d7c2754afed2f133c4d3dd6)), closes [#3391](https://github.com/ArcReel/ArcReel/issues/3391)
+* **projects:** 删除的项目进入「已删除项目」，保留 30 天，可以整体恢复或彻底删除 ([367c05c](https://github.com/ArcReel/ArcReel/commit/367c05c65de1b6af460561875f6524aa4173ac8d)), closes [#3389](https://github.com/ArcReel/ArcReel/issues/3389)
+* **script:** 移除分镜与视频单元时媒体与版本历史移入项目回收站，恢复时插回原前驱之后 ([0dbda26](https://github.com/ArcReel/ArcReel/commit/0dbda26a5e4d57d2472c42003b1b474361d616d1)), closes [#3386](https://github.com/ArcReel/ArcReel/issues/3386)
+* **trash:** 删除剪辑时间线移入项目回收站，可连同成片与剪映草稿恢复 ([0345af2](https://github.com/ArcReel/ArcReel/commit/0345af29c9cdd66ae874cb6b52dec5f7b46697b8)), closes [#3382](https://github.com/ArcReel/ArcReel/issues/3382)
+* **trash:** 删除源文件与规划草稿移入项目回收站，替换上传时旧文件同样可以找回 ([2507530](https://github.com/ArcReel/ArcReel/commit/2507530824a627ed5bc4e37cdd5c317da638470c)), closes [#3387](https://github.com/ArcReel/ArcReel/issues/3387)
+* **trash:** 升级前的删除记录可以恢复，无法按原结构恢复时找回其中的文件、结构文件可下载 ([049f265](https://github.com/ArcReel/ArcReel/commit/049f265cc37db62016743f3f4e646d16f661af6c)), closes [#3383](https://github.com/ArcReel/ArcReel/issues/3383)
+* **trash:** 历史版本、项目记忆与 Agent 配置重置的删除移入项目回收站 ([5d84982](https://github.com/ArcReel/ArcReel/commit/5d84982f823286640a1592f73d27808558d1fdec)), closes [#3381](https://github.com/ArcReel/ArcReel/issues/3381)
+* **trash:** 宫格、尾帧与角色参考音频的删除进入项目回收站，恢复时回原位或换新名 ([2c152cd](https://github.com/ArcReel/ArcReel/commit/2c152cd8a0d381927f1216466c358fc8e425d3f7)), closes [#3388](https://github.com/ArcReel/ArcReel/issues/3388)
+
+
+### 🐛 Bug 修复
+
+* **file-view:** 当前版本快照不再提供删除，生成完成时目标已删除给出提示，回收站按对象名显示源文件与规划草稿 ([0c6af24](https://github.com/ArcReel/ArcReel/commit/0c6af24ca5d00f5091151d19b899179f3cb3abb4)), closes [#3424](https://github.com/ArcReel/ArcReel/issues/3424)
+* **files:** 补齐多选删除并保护在用文件、工作流草稿与排队中的宫格记录 ([61f63de](https://github.com/ArcReel/ArcReel/commit/61f63de53f9dae622e7d09389a40c5efba37a922)), closes [#3378](https://github.com/ArcReel/ArcReel/issues/3378) [#3379](https://github.com/ArcReel/ArcReel/issues/3379) [#3380](https://github.com/ArcReel/ArcReel/issues/3380)
+* **frontend:** 按 React Doctor 全量诊断修正前端竞态、key、可访问性与模块边界 ([#3412](https://github.com/ArcReel/ArcReel/issues/3412)) ([4ababbe](https://github.com/ArcReel/ArcReel/commit/4ababbe120d4e4259132902a8ae097b026a0e715))
+* **trash:** 修复生成结果、项目记忆、恢复与已删除项目的集成边界 ([829e07d](https://github.com/ArcReel/ArcReel/commit/829e07d02ffc6cfef16f24bc649f6e416652e2f1))
+* **trash:** 并发恢复同一条记录只生效一次，换编号的分镜回到产物规划，恢复失败文案说明记录已保留 ([6b99301](https://github.com/ArcReel/ArcReel/commit/6b993016a936d1d04e4233c47642101224a4d2df)), closes [#3423](https://github.com/ArcReel/ArcReel/issues/3423)
+* **trash:** 补齐无文件对象的删除记录，恢复与删除的失败路径都保留可重试的状态 ([ba1e82f](https://github.com/ArcReel/ArcReel/commit/ba1e82f7f06837ad4d4f04e2ebc0c783f632b242))
+
+
+### 📚 文档
+
+* **standards:** 整理中文文案规范，统一界面文案的标点写法 ([#3417](https://github.com/ArcReel/ArcReel/issues/3417)) ([a64ec21](https://github.com/ArcReel/ArcReel/commit/a64ec21969895bc6d5b1b0449de6003d21f95f77))
+* **trash:** 文件视图与项目回收站用户指南，恢复摘要说明换名换编号，Agent 指引补充结构删除与恢复 ([1145a62](https://github.com/ArcReel/ArcReel/commit/1145a62f5876ebdfab5418198485e72e671778ab)), closes [#3425](https://github.com/ArcReel/ArcReel/issues/3425)
+
 ## [0.34.0](https://github.com/ArcReel/ArcReel/compare/v0.33.0...v0.34.0) (2026-10-24)
 
 
